@@ -28,13 +28,9 @@ public class Control{
 		projectView.searchToC(new Searchlis());
 		projectView.sortByToC(new sortbyList());
 		projectView.saveToC(new savebutton());
-//		projectView.tableSortToC(new tableSort());
 		projectView.gettabmod().setRowCount(0);
 		Drawtable();
 	}
-	
-
-	
 	class loadbutton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			int result = projectView.getFileChooser().showOpenDialog(projectView);
@@ -48,7 +44,6 @@ public class Control{
 			}
 		}
 	}
-	
 	class savebutton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			int result = projectView.getFileChooser().showSaveDialog(projectView);
@@ -62,7 +57,6 @@ public class Control{
 			}
 		}
 	}
-	
 	class addfromfile implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			int result = projectView.getFileChooser().showOpenDialog(projectView);
@@ -88,11 +82,6 @@ public class Control{
 			for (int i=0;i<x.length;i++){
 				projectView.gettabmod().removeRow(x[i]-i);
 				projectModel.deleteDataRow(x[projectModel.getSelectedRow().get(i)]-i);
-					
-
-				
-
-			
 			}
 			projectModel.updateFile();
 			Drawtable();
@@ -103,18 +92,14 @@ public class Control{
 
 		}
 	}
-	
 	class sortbyList implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			  JComboBox cb = (JComboBox)e.getSource();
 			  System.out.println(cb.getSelectedIndex());
 		        String petName = (String)cb.getSelectedItem();
 			listSelected = petName;
-			projectModel.searchby(petName);
 		}
-
 	}
-	
 	class addpanelbut implements ActionListener{
 	addpanel newmovie;
 		addpanelbut(addpanel newmovie){
@@ -130,16 +115,10 @@ public class Control{
 	}
 	
 	class Searchlis implements ActionListener{
-
-	
 		public void actionPerformed(ActionEvent e) {
 			Drawtable();
-			
-			
 		}
 	}
-	
-
 	public void Drawtable() {
 		projectModel.getSelectedRow().clear();
 		projectView.gettabmod().setRowCount(0);
