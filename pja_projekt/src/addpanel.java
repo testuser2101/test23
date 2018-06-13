@@ -15,22 +15,20 @@ public class addpanel extends JFrame{
 	private JLabel date = new JLabel ("Publication date");
 	private JLabel genre = new JLabel ("Genre");
 	private JLabel length = new JLabel ("Length");
-	private JTextField titletext = new JTextField ("x");
-	private JTextField directortext = new JTextField ("x");
-	private JTextField datetext = new JTextField ("x");
-	private JTextField genretext = new JTextField ("x");
-	private JTextField lengthtext = new JTextField ("x");
+	private JTextField titletext = new JTextField ("title");
+	private JTextField directortext = new JTextField ("director");
+	private JTextField datetext = new JTextField ("01.02.1234");
+	private JTextField genretext = new JTextField ("genre genre");
+	private JTextField lengthtext = new JTextField ("12:34:56");
 	private JButton add = new JButton ("Add a movie");
 	addpanel(){
+		
 		super("Add a movie");
 		maincontener.setLayout(new BorderLayout());
 		maincontener.add(gridcontener, BorderLayout.CENTER);
 		bottomcontener.add(add);
-		
 		maincontener.add(bottomcontener, BorderLayout.PAGE_END);
-		
 		gridcontener.setLayout(new GridLayout(5,2,5,0));
-		
 		gridcontener.add(title);
 		gridcontener.add(titletext);
 		gridcontener.add(genre);
@@ -41,17 +39,8 @@ public class addpanel extends JFrame{
 		gridcontener.add(datetext);
 		gridcontener.add(length);
 		gridcontener.add(lengthtext);
-
-
-
-
-		
-		
-		
 		gridcontener.add(lengthtext);
 		this.add(maincontener);
-		
-		
 		this.setResizable(false);
 		this.setVisible(true);
 		this.setSize(400,200);
